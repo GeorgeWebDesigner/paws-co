@@ -115,62 +115,63 @@
 
         <section id="pricing" class="fade-in">
             <div class="container">
-                <h2 class="section-title">Цены на услуги</h2>
-
-                <table class="pricing-table">
-                    <thead>
-                        <tr>
-                            <th>Услуга</th>
-                            <th>XS</th>
-                            <th>S</th>
-                            <th>M</th>
-                            <th>L</th>
-                            <th>XL</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="service-name">Гигиена</td>
-                            <td>2500 RSD</td>
-                            <td>3000 RSD</td>
-                            <td>4000 RSD</td>
-                            <td>5500 RSD</td>
-                            <td>6500 RSD</td>
-                        </tr>
-                        <tr>
-                            <td class="service-name">Комплекс</td>
-                            <td>4500 RSD</td>
-                            <td>5000 RSD</td>
-                            <td>7500 RSD</td>
-                            <td>9000 RSD</td>
-                            <td>10500 RSD</td>
-                        </tr>
-                        <tr>
-                            <td class="service-name">Экспресс линька</td>
-                            <td>3000 RSD</td>
-                            <td>3500 RSD</td>
-                            <td>5500 RSD</td>
-                            <td>6000 RSD</td>
-                            <td>6500 RSD</td>
-                        </tr>
-                        <tr>
-                            <td class="service-name">Вычесывание</td>
-                            <td>4500 RSD</td>
-                            <td>5000 RSD</td>
-                            <td>7500 RSD</td>
-                            <td>9000 RSD</td>
-                            <td>10500 RSD</td>
-                        </tr>
-                        <tr>
-                            <td class="service-name">Тримминг</td>
-                            <td>6500 RSD</td>
-                            <td>7500 RSD</td>
-                            <td>8500 RSD</td>
-                            <td>10500 RSD</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="container">
+    <h2 class="section-title">Цены на услуги</h2>
+    <table class="pricing-table">
+        <thead>
+            <tr>
+                <th>Услуга</th>
+                <th>XS</th>
+                <th>S</th>
+                <th>M</th>
+                <th>L</th>
+                <th>XL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="service-name">Гигиена</td>
+                <td data-label="XS">2500 RSD</td>
+                <td data-label="S">3000 RSD</td>
+                <td data-label="M">4000 RSD</td>
+                <td data-label="L">5500 RSD</td>
+                <td data-label="XL">6500 RSD</td>
+            </tr>
+            <tr>
+                <td class="service-name">Комплекс</td>
+                <td data-label="XS">4500 RSD</td>
+                <td data-label="S">5000 RSD</td>
+                <td data-label="M">7500 RSD</td>
+                <td data-label="L">9000 RSD</td>
+                <td data-label="XL">10500 RSD</td>
+            </tr>
+            <tr>
+                <td class="service-name">Экспресс линька</td>
+                <td data-label="XS">3000 RSD</td>
+                <td data-label="S">3500 RSD</td>
+                <td data-label="M">5500 RSD</td>
+                <td data-label="L">6000 RSD</td>
+                <td data-label="XL">6500 RSD</td>
+            </tr>
+            <tr>
+                <td class="service-name">Вычесывание</td>
+                <td data-label="XS">4500 RSD</td>
+                <td data-label="S">5000 RSD</td>
+                <td data-label="M">7500 RSD</td>
+                <td data-label="L">9000 RSD</td>
+                <td data-label="XL">10500 RSD</td>
+            </tr>
+            <tr>
+                <td class="service-name">Тримминг</td>
+                <td data-label="XS">6500 RSD</td>
+                <td data-label="S">7500 RSD</td>
+                <td data-label="M">8500 RSD</td>
+                <td data-label="L">10500 RSD</td>
+                <td data-label="XL">-</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
                 <div class="size-info">
                     <h3>Таблица размеров</h3>
@@ -221,16 +222,36 @@
         </section>
 
         <section id="booking" class="fade-in">
-            <div class="container">
-                <h2 class="section-title">Онлайн запись</h2>
-                <p style="text-align: center; margin-bottom: 2rem;">Запишите своего питомца на процедуру онлайн — это удобно и быстро!</p>
-
-                <div class="booking-widget">
-                    <!-- Здесь будет виджет для онлайн записи с n819790.alteg.io -->
-                    <iframe src="https://n819790.alteg.io" width="100%" height="100%" frameborder="0"></iframe>
+    <div class="container">
+        <div class="alteggio-booking-container">
+            <div class="alteggio-booking-logo">
+                <img src="img_1.png" alt="Alteggio" class="alteggio-logo">
+            </div>
+            <div class="alteggio-booking-content">
+                <div class="alteggio-booking-text">
+                    <h3>Онлайн запись</h3>
+                    <p>Запишите своего любимца на профессиональный грумминг в Белграде</p>
+                    <button id="open-booking-modal" class="btn alteggio-btn">
+                        Записаться онлайн
+                    </button>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+
+<!-- Модальное окно для виджета бронирования -->
+<div class="modal-overlay" id="booking-modal">
+    <div class="modal-container booking-modal-container">
+        <div class="modal-header alteggio-header">
+            <h3><img src="img_1.png" alt="Alteggio" class="booking-icon"> Онлайн запись</h3>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body booking-modal-body">
+            <iframe src="https://n819790.alteg.io" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+    </div>
+</div>
 
         <section id="shop" class="fade-in">
     <div class="container">
@@ -312,6 +333,27 @@
             <p class="copyright">© 2025 Paws&Co Beograd. Все права защищены.</p>
         </div>
     </footer>
+
+    <script>
+    // Обработчик для открытия модального окна бронирования
+    document.getElementById('open-booking-modal').addEventListener('click', function() {
+        document.getElementById('booking-modal').classList.add('active');
+    });
+
+    // Обработчик для закрытия модального окна бронирования
+    document.querySelectorAll('#booking-modal .close-modal').forEach(button => {
+        button.addEventListener('click', function() {
+            document.getElementById('booking-modal').classList.remove('active');
+        });
+    });
+
+    // Закрытие модального окна при клике вне контента
+    document.getElementById('booking-modal').addEventListener('click', function(event) {
+        if (event.target === this) {
+            this.classList.remove('active');
+        }
+    });
+</script>
 
     <!-- Добавляем Font Awesome для иконок -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
