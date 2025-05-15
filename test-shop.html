@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws&Co - Каталог товаров</title>
+    <link rel="stylesheet" href="test-styles.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Шапка сайта (сохраняем оригинальную) -->
+<header>
+    <div class="logo-container">
+        <div class="rainbow-border">
+            <img src="Paws-black.png" alt="Paws&Co Logo" class="logo">
+        </div>
+    </div>
+    <h1>Paws&Co</h1>
+    <p>Грумминг салон и зоомагазин для ваших любимцев</p>
+    <div class="social-links">
+        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+</header>
+
+<!-- Панель навигации -->
+<nav>
+    <ul>
+        <li><a href="main.html">Главная</a></li>
+        <li><a href="catalog.html" class="active">Каталог</a></li>
+        <li><a href="grooming.html">Грумминг</a></li>
+        <li><a href="#contact">Контакты</a></li>
+    </ul>
+</nav>
+
+<!-- Контейнер с выбором животного и каталогом -->
+<div class="container app-container">
+    <!-- Выбор животного -->
+    <div class="pet-selection" id="pet-selection">
+        <h2>Выберите вашего питомца</h2>
+        <p>В нашем каталоге представлены товары как для собак, так и для кошек. Выберите вашего питомца, чтобы увидеть подходящие товары. Мы предлагаем только качественную продукцию от проверенных производителей.</p>
+
+        <div class="pet-buttons">
+            <div>
+                <button class="pet-button" id="dog-button">
+                    <img src="https://cdn3.iconfinder.com/data/icons/animal-40/128/Animal_Dog-512.png" alt="Собака">
+                </button>
+                <span class="pet-button-label">Собака</span>
+            </div>
+
+            <div>
+                <button class="pet-button" id="cat-button">
+                    <img src="https://cdn3.iconfinder.com/data/icons/animal-40/128/Animal_Cat-512.png" alt="Кошка">
+                </button>
+                <span class="pet-button-label">Кошка</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контейнер для товаров для собак -->
+    <div class="pet-container" id="dog-container">
+        <button class="back-button" id="back-from-dog">Вернуться к выбору питомца</button>
+
+        <!-- Секция Корм для собак -->
+        <h2 class="section-title" id="dog-food">Корм для собак</h2>
+
+        <div class="category-tabs">
+            <div class="category-tab active">Все</div>
+            <div class="category-tab">Monge</div>
+            <div class="category-tab">Taste of the Wild</div>
+            <div class="category-tab">Bwild</div>
+        </div>
+
+        <div class="product-grid">
+            <!-- Товары для собак -->
+            <div class="product-card" data-sub-category="monge">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/monge-all-breeds-puppy-jagnjetina-2-5-kg-3.jpg" alt="Monge ALL BREED PUPPY">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Monge ALL BREED PUPPY</h3>
+                    <p class="product-description">Сухой корм для щенков с ягненком и рисом, 2.5 кг</p>
+                    <p class="product-price">1390 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-sub-category="monge">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/monge-all-breeds-adult-govedina-2-5-kg-3.jpg" alt="Monge ALL BREED ADULT">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Monge All Breed Adult</h3>
+                    <p class="product-description">Сухой корм для взрослых собак с говядиной, 2.5 кг</p>
+                    <p class="product-price">2390 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-sub-category="taste-of-the-wild">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/taste-of-the-wild-high-prairie-2-kg-1.jpg" alt="Taste of the Wild High Prairie">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Taste of the Wild High Prairie</h3>
+                    <p class="product-description">Сухой корм с олениной и бизоном, 2 кг</p>
+                    <p class="product-price">1790 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-sub-category="bwild">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/monge-bwild-grain-free-jagnjetina-400-gr-3.jpg" alt="Monge BWild Lamb">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Monge BWild Lamb</h3>
+                    <p class="product-description">Беззерновой корм для собак с ягненком, 400 г</p>
+                    <p class="product-price">590 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция Лакомства для собак -->
+        <h2 class="section-title" id="dog-treats">Лакомства для собак</h2>
+
+        <div class="category-tabs">
+            <div class="category-tab active">Все</div>
+            <div class="category-tab">Monge</div>
+            <div class="category-tab">Другие бренды</div>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card" data-sub-category="monge">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/monge-sensitive-digestion-lamb-with-chestnut-45-g.jpg" alt="Monge Sensitive digestion">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Monge Sensitive Digestion</h3>
+                    <p class="product-description">Лакомство для чувствительного пищеварения с ягненком и каштаном, 45 г</p>
+                    <p class="product-price">260 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-sub-category="monge">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/monge-immunity-support-rabbit-with-nucleotides-45-g.jpg" alt="Monge Immunity support">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Monge Immunity Support</h3>
+                    <p class="product-description">Лакомство для поддержки иммунитета с кроликом, 45 г</p>
+                    <p class="product-price">260 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция Игрушки для собак -->
+        <h2 class="section-title" id="dog-toys">Игрушки для собак</h2>
+
+        <div class="category-tabs">
+            <div class="category-tab active">Все</div>
+            <div class="category-tab">Мячики</div>
+            <div class="category-tab">Латексные</div>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card" data-sub-category="latex">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/dv400031.jpg" alt="DV Igracka latex">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">DV Igracka Latex</h3>
+                    <p class="product-description">Латексная игрушка для собак, 8.5 см, ассортимент</p>
+                    <p class="product-price">390 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-sub-category="latex">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/fl523923.jpg" alt="FL RUGGO LATEX RUGBY">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Flamingo Ruggo Latex Rugby</h3>
+                    <p class="product-description">Латексная игрушка в форме мяча для регби, 7.7×4.9 см</p>
+                    <p class="product-price">350 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-sub-category="balls">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/fl524070.jpg" alt="FL Toy bounca ball">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Flamingo Bounca Ball</h3>
+                    <p class="product-description">Прыгающий мячик для животных, 6.3 см</p>
+                    <p class="product-price">190 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контейнер для товаров для кошек -->
+    <div class="pet-container" id="cat-container">
+        <button class="back-button" id="back-from-cat">Вернуться к выбору питомца</button>
+
+        <!-- Секция Корм для кошек -->
+        <h2 class="section-title" id="cat-food">Корм для кошек</h2>
+
+        <div class="category-tabs">
+            <div class="category-tab active">Все</div>
+            <div class="category-tab">Сухой корм</div>
+            <div class="category-tab">Влажный корм</div>
+            <div class="category-tab">Лечебный корм</div>
+        </div>
+
+        <div class="product-grid">
+            <!-- Товары для кошек -->
+            <div class="product-card" data-sub-category="dry">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/monge-cat-adult-losos-1-5-kg.jpg" alt="Monge Cat Adult Salmon">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Monge Cat Adult Salmon</h3>
+                    <p class="product-description">Сухой корм для взрослых кошек с лососем, 1.5 кг</p>
+                    <p class="product-price">950 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-sub-category="dry">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/monge-cat-hairball-1-5-kg.jpg" alt="Monge CAT HAIRBALL">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Monge CAT HAIRBALL</h3>
+                    <p class="product-description">Сухой корм для выведения шерсти, 1.5 кг</p>
+                    <p class="product-price">910 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-sub-category="wet">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/monge-grill-vlazna-hrana-za-sterilisane-macke-govedina-85-g.jpg" alt="Monge Grill Steril">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Monge Grill Cat Steril</h3>
+                    <p class="product-description">Влажный корм для стерилизованных кошек с говядиной, 85 г</p>
+                    <p class="product-price">90 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-sub-category="medical">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/monge-cat-urinary-1-5-kg.jpg" alt="Monge CAT URINARY">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Monge CAT URINARY</h3>
+                    <p class="product-description">Профилактический корм для кошек с заболеваниями мочевыводящих путей, 1.5 кг</p>
+                    <p class="product-price">1010 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция Лакомства для кошек -->
+        <h2 class="section-title" id="cat-treats">Лакомства для кошек</h2>
+
+        <div class="category-tabs">
+            <div class="category-tab active">Все</div>
+            <div class="category-tab">Monge</div>
+            <div class="category-tab">Другие бренды</div>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card" data-sub-category="monge">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/monge-sterilised-duck-pomegranate-50-gr.jpg" alt="Monge Sterilised Duck">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Monge Sterilised Duck</h3>
+                    <p class="product-description">Лакомство для стерилизованных кошек с уткой и гранатом, 50 г</p>
+                    <p class="product-price">270 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-sub-category="monge">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/monge-sterilized-duck-with-lemon-balm-15-g.jpg" alt="Monge Sterilised Duck">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Monge Sterilised Duck</h3>
+                    <p class="product-description">Лакомство для стерилизованных кошек с уткой и мелиссой, 15 г</p>
+                    <p class="product-price">120 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Секция Наполнители -->
+        <h2 class="section-title" id="litter">Наполнители</h2>
+
+        <div class="category-tabs">
+            <div class="category-tab active">Все</div>
+            <div class="category-tab">Комкующиеся</div>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card" data-sub-category="clumping">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/8020200g03.jpg" alt="Cat Leader">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Cat Leader Clumping Odour Attack Fresh</h3>
+                    <p class="product-description">Комкующийся наполнитель с контролем запаха, 5 кг</p>
+                    <p class="product-price">350 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-sub-category="clumping">
+                <div class="product-image">
+                    <img src="https://cdn-img.pethouse.rs/products/gh024.jpg" alt="Who Cares">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Who Cares - CLUMPING</h3>
+                    <p class="product-description">Комкующийся наполнитель для кошачьего туалета, 5 кг</p>
+                    <p class="product-price">320 ₽</p>
+                    <button class="btn">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Корзина (сохраняем оригинальную) -->
+<div class="cart-container">
+    <div class="cart-icon" id="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+    <div class="cart-dropdown" id="cart-dropdown">
+        <!-- Содержимое корзины -->
+    </div>
+</div>
+
+<!-- Подвал (сохраняем оригинальный) -->
+<footer id="contact">
+    <h3>Paws&Co - Грумминг салон и зоомагазин</h3>
+    <div class="contact-info">
+        <p>Адрес: Brane Crnojevica 9, Beograd</p>
+        <p>Телефон: +381 69 1032-439</p>
+        <p>Email: pawsco@gmail.com</p>
+        <p>Часы работы: 11:00 - 19:00, без выходных</p>
+    </div>
+    <a href="main.html" class="btn btn-accent">На главную страницу</a>
+    <p style="margin-top: 2rem;">© 2025 Paws&Co. Все права защищены.</p>
+</footer>
+
+<!-- JavaScript для интерактивности -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Получаем элементы
+    const petSelection = document.getElementById('pet-selection');
+    const dogButton = document.getElementById('dog-button');
+    const catButton = document.getElementById('cat-button');
+    const dogContainer = document.getElementById('dog-container');
+    const catContainer = document.getElementById('cat-container');
+    const backFromDog = document.getElementById('back-from-dog');
+    const backFromCat = document.getElementById('back-from-cat');
+
+    // Обработчик для кнопки собак
+    dogButton.addEventListener('click', function() {
+        // Добавляем класс анимации
+        this.classList.add('clicked');
+
+        // После задержки показываем товары для собак
+        setTimeout(() => {
+            petSelection.style.display = 'none';
+            dogContainer.classList.add('active');
+            // Плавный скролл к началу контейнера
+            window.scrollTo({
+                top: dogContainer.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }, 500);
+
+        // Удаляем класс анимации через некоторое время
+        setTimeout(() => {
+            this.classList.remove('clicked');
+        }, 600);
+    });
+
+    // Обработчик для кнопки кошек
+    catButton.addEventListener('click', function() {
+        // Добавляем класс анимации
+        this.classList.add('clicked');
+
+        // После задержки показываем товары для кошек
+        setTimeout(() => {
+            petSelection.style.display = 'none';
+            catContainer.classList.add('active');
+            // Плавный скролл к началу контейнера
+            window.scrollTo({
+                top: catContainer.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }, 500);
+
+        // Удаляем класс анимации через некоторое время
+        setTimeout(() => {
+            this.classList.remove('clicked');
+        }, 600);
+    });
+
+    // Обработчик для кнопки возврата от товаров для собак
+    backFromDog.addEventListener('click', function() {
+        dogContainer.classList.remove('active');
+        petSelection.style.display = 'flex';
+        // Плавный скролл к выбору животного
+        window.scrollTo({
+            top: petSelection.offsetTop - 100,
+            behavior: 'smooth'
+        });
+    });
+
+    // Обработчик для кнопки возврата от товаров для кошек
+    backFromCat.addEventListener('click', function() {
+        catContainer.classList.remove('active');
+        petSelection.style.display = 'flex';
+        // Плавный скролл к выбору животного
+        window.scrollTo({
+            top: petSelection.offsetTop - 100,
+            behavior: 'smooth'
+        });
+    });
+
+    // Логика для кнопок фильтрации товаров
+    document.querySelectorAll('.category-tabs').forEach((tabGroup) => {
+        const tabs = tabGroup.querySelectorAll('.category-tab');
+        const productGrid = tabGroup.nextElementSibling;
+        const products = productGrid.querySelectorAll('.product-card');
+
+        tabs.forEach((tab, tabIndex) => {
+            tab.addEventListener('click', () => {
+                // Удаляем активный класс у всех табов в этой группе
+                tabs.forEach(t => t.classList.remove('active'));
+
+                // Добавляем активный класс текущему табу
+                tab.classList.add('active');
+
+                // Логика фильтрации товаров
+                const filter = tab.getAttribute('data-filter') || (tabIndex === 0 ? 'all' : tab.textContent.toLowerCase());
+
+                products.forEach(product => {
+                    if (filter === 'all') {
+                        product.style.display = 'block';
+                    } else {
+                        const subCategory = product.getAttribute('data-sub-category');
+
+                        if (subCategory === filter) {
+                            product.style.display = 'block';
+
+                            // Анимация появления
+                            product.style.opacity = '0';
+                            setTimeout(() => {
+                                product.style.transition = 'opacity 0.3s ease-in-out';
+                                product.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            product.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    });
+
+    // Обновление заголовка текущей категории
+document.addEventListener('DOMContentLoaded', function() {
+    // Для мобильных устройств
+    if (window.innerWidth <= 768) {
+        // Обработка переключения между категориями
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const categoryTitle = this.textContent;
+                document.getElementById('current-category').textContent =
+                    this.classList.contains('active') && this.textContent === 'Все'
+                        ? document.querySelector('.section-title').textContent
+                        : categoryTitle;
+
+                // Активация таба
+                const tabs = this.parentElement.querySelectorAll('.category-tab');
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Обработка экрана выбора животного
+        const dogButton = document.getElementById('dog-button');
+        const catButton = document.getElementById('cat-button');
+
+        if (dogButton) {
+            dogButton.addEventListener('click', function() {
+                setTimeout(() => {
+                    document.getElementById('current-category').textContent = 'Корм для собак';
+                }, 500);
+            });
+        }
+
+        if (catButton) {
+            catButton.addEventListener('click', function() {
+                setTimeout(() => {
+                    document.getElementById('current-category').textContent = 'Корм для кошек';
+                }, 500);
+            });
+        }
+    }
+
+    // Анимация кнопки "Заказать"
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', function() {
+            this.classList.add('adding');
+            this.textContent = 'Добавлено';
+
+            setTimeout(() => {
+                this.classList.remove('adding');
+                this.textContent = 'Заказать';
+            }, 1000);
+        });
+    });
+});
+
+    // Сохраняем логику корзины из оригинального кода, которая обрабатывает добавление товаров в корзину
+    // ...
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>
