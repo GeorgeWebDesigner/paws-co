@@ -209,6 +209,67 @@ section:last-child {
     transform: translateY(-10px);
 }
 
+.service-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: white;
+    margin-bottom: 20px;
+    overflow: hidden; /* Скрываем все, что выходит за пределы карточки */
+}
+
+/* Эффект отрезанного уголка */
+.service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    transform: translate(25px, 25px) rotate(45deg);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    width: 65px;
+    height: 65px;
+    background-color: var(--light-gray);
+    transform-origin: bottom right;
+    transform: rotate(90deg) translate(42px, 0);
+    z-index: 1;
+    border-radius: 0 0 0 12px;
+}
+
+/* Иконка услуги */
+.service-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-blue);
+    color: white;
+    z-index: 2;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    border-radius: 9px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Увеличение при наведении */
+.service-card:hover .service-icon {
+    background-color: var(--accent-pink);
+}
+
 .service-image {
     height: 200px;
     background-color: var(--light-gray);
@@ -226,6 +287,7 @@ section:last-child {
 
 .service-content {
     padding: 1.5rem;
+    margin-bottom: 15px;
 }
 
 .service-title {
