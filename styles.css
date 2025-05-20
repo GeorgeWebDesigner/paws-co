@@ -1642,80 +1642,65 @@ footer {
   pointer-events: none;
 }
 
-/* Alteggio booking styles */
-#booking {
-    padding: 2rem 0;
-    margin: 3rem 0;
-}
-
-.alteggio-booking-container {
-    background-color: #FFD166; /* Alteggio желтый цвет */
-    padding: 2rem 3rem 2rem 7rem; /* Увеличенный отступ слева для логотипа */
-    border-radius: 12px;
-    position: relative;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.alteggio-booking-content {
-    max-width: 100%;
-}
-
-.alteggio-booking-text {
-    width: 100%;
-}
-
-.alteggio-booking-text h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-.alteggio-booking-text p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-    max-width: 500px;
-    color: #333;
-}
-
-.alteggio-btn {
-    background-color: #3f51b5; /* Alteggio синий цвет */
+/* Фиксированная кнопка онлайн-записи */
+.booking-btn-fixed {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #3f51b5; /* Цвет Alteggio */
     color: white;
     border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 4px;
-    font-weight: 500;
-    transition: all 0.3s;
-    display: inline-block;
-    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(63, 81, 181, 0.4);
     cursor: pointer;
+    z-index: 99;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
-.alteggio-btn:hover {
-    background-color: #303f9f; /* Темнее */
+.booking-btn-fixed i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+
+.booking-btn-fixed:hover {
+    background-color: #303f9f; /* Темнее при наведении */
     transform: translateY(-3px);
-    color: white;
-    box-shadow: 0 5px 15px rgba(63, 81, 181, 0.4);
+    box-shadow: 0 6px 18px rgba(63, 81, 181, 0.5);
 }
 
-.alteggio-booking-logo {
-    position: absolute;
-    top: -30px; /* Выступает над блоком */
-    left: -20px; /* Выступает слева */
-    z-index: 10; /* Убедимся, что логотип находится над блоком */
+.booking-btn-fixed:active {
+    transform: translateY(-1px);
 }
 
-.alteggio-logo {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    background-color: white;
-    padding: 10px;
-    transition: transform 0.3s ease;
+/* Адаптивный режим */
+@media (max-width: 768px) {
+    .booking-btn-fixed {
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 16px;
+    }
+
+    /* Скрываем текст на маленьких экранах */
+    .booking-btn-text {
+        display: none;
+    }
+
+    .booking-btn-fixed i {
+        margin-right: 0;
+        font-size: 1.4rem;
+    }
 }
 
-.alteggio-logo:hover {
-    transform: rotate(10deg);
+/* Корректировка позиции с учетом кнопки "Наверх" */
+@media (max-width: 576px) {
+    .booking-btn-fixed {
+        bottom: 80px; /* Чтобы не пересекалась с кнопкой "Наверх" */
+    }
 }
 
 .booking-modal-container {
