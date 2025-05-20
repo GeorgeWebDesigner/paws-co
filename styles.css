@@ -74,6 +74,128 @@ header {
     margin-bottom: 2rem;
 }
 
+/* Стили для десктопной версии хедера */
+@media (min-width: 820px) {
+    header {
+        height: 600px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .header-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('hover-image.png'); /* Используйте ваше изображение */
+        background-size: cover;
+        background-position: center;
+        z-index: 1;
+    }
+
+    /* Создаем затемнение/размытие по краям */
+    .header-background::before,
+    .header-background::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 15%;
+        z-index: 2;
+    }
+
+    .header-background::before {
+        left: 0;
+        background: linear-gradient(to right, rgba(10, 17, 40, 0.7), transparent);
+    }
+
+    .header-background::after {
+        right: 0;
+        background: linear-gradient(to left, rgba(10, 17, 40, 0.7), transparent);
+    }
+
+    .header-content {
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.6);
+        max-width: 500px;
+        text-align: center;
+        z-index: 3;
+        animation: fadeIn 1.5s ease-out;
+    }
+
+    .header-content .logo-container {
+        margin-bottom: 1.5rem;
+    }
+
+    .header-content .hero-text h1 {
+        color: var(--dark-blue);
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .header-content .hero-text p {
+        color: var(--dark-blue);
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Анимация появления контента */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Улучшаем стили для ссылок на соцсети */
+    .social-links {
+        margin: 1.5rem 0;
+    }
+
+    .social-links a {
+        margin: 0 0.5rem;
+        font-size: 1.6rem;
+        color: var(--dark-blue);
+        transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-links a:hover {
+        color: var(--accent-pink);
+        transform: scale(1.2);
+    }
+
+    /* Улучшаем стиль кнопки */
+    .header-content .btn-accent {
+        margin-top: 1rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
+/* Мобильные стили остаются прежними */
+@media (max-width: 818px) {
+    .header-background {
+        display: none;
+    }
+
+    header {
+        background-color: var(--dark-blue);
+        padding: 2rem 1rem 4rem;
+        text-align: center;
+    }
+
+    .header-content {
+        padding: 1.5rem !important;
+    }
+
+    /* Остальные мобильные стили остаются как есть */
+}
+
 /* Navigation styles */
 nav {
     background-color: var(--dark-blue);
@@ -659,6 +781,115 @@ section:last-child {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для блока с картой и отзывами */
+.map-wrapper {
+    position: relative;
+    margin-top: 2rem;
+}
+
+/* Стикер с отзывами Google */
+.google-reviews-sticker {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    padding: 1.2rem;
+    z-index: 10;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.google-reviews-sticker:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.reviews-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.google-icon {
+    font-size: 1.8rem;
+    margin-right: 0.8rem;
+    color: #4285F4;
+}
+
+.rating-stars {
+    color: #FBBC05;
+    margin-bottom: 0.2rem;
+    letter-spacing: 2px;
+}
+
+.rating-value {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark-blue);
+}
+
+.reviews-content {
+    margin-bottom: 1rem;
+}
+
+.review-count {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.review-quote {
+    position: relative;
+    padding-left: 1rem;
+    border-left: 3px solid #FBBC05;
+    font-style: italic;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.reviews-link {
+    display: inline-block;
+    padding: 0.5rem 0.8rem;
+    background-color: var(--accent-pink);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: background-color 0.3s;
+}
+
+.reviews-link:hover {
+    background-color: var(--accent-purple);
+}
+
+.reviews-link i {
+    margin-left: 5px;
+    font-size: 0.8rem;
+}
+
+/* Адаптивность для стикера отзывов */
+@media (max-width: 991px) {
+    .google-reviews-sticker {
+        width: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .google-reviews-sticker {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .map-container {
+        height: 300px;
+    }
 }
 
 .booking-widget {

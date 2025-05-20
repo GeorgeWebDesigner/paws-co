@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="desktop-header">
+    <div class="header-background">
+    </div>
+
+    <div class="header-content">
         <div class="logo-container">
             <div class="rainbow-border">
                 <img src="Paws-black.png" alt="Paws&Co Logo" class="logo">
@@ -16,14 +20,15 @@
         <div class="hero-text">
             <h1>Paws&Co Белград</h1>
             <p>Грумминг салон</p>
-          <div class="social-links">
+            <div class="social-links">
                 <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
                 <a href="https://www.instagram.com/pawsco_rs/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
             <a href="#booking" class="btn btn-accent">Онлайн запись</a>
         </div>
-    </header>
+    </div>
+</header>
 
     <nav>
         <ul>
@@ -382,42 +387,72 @@
 </section>
 
         <section id="contact" class="fade-in">
-            <div class="container">
-                <h2 class="section-title">Как нас найти</h2>
+    <div class="container">
+        <h2 class="section-title">Как нас найти</h2>
 
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Beograd, Vračar, Brane Crnčevića, br.9 (Staro ime - Ohridska, br.9)</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Beograd, Vračar, Brane Crnčevića, br.9 (Staro ime - Ohridska, br.9)</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <p><a href="tel:+381691032439">+381 69 1032 439</a></p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <p>11:00 - 19:00, ежедневно</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-globe"></i>
+                <p><a href="https://n819790.alteg.io" target="_blank">Online бронирование</a></p>
+            </div>
+        </div>
+
+        <div class="map-wrapper">
+            <div class="map-container">
+                <!-- Карта с адресом салона с обновленными координатами -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.5467163825397!2d20.4723096!3d44.8134397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aa2eb5c0325%3A0xce3e8097fc54735e!2z0J7RhdGA0LjQtNGB0LrQsCA5LCDQkdC10L7Qs9GA0LDQtCAxMTAwMA!5e0!3m2!1sru!2srs!4v1683456231121!5m2!1sru!2srs"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <!-- Стикер с отзывами Google -->
+            <div class="google-reviews-sticker">
+                <div class="reviews-header">
+                    <div class="google-icon">
+                        <i class="fab fa-google"></i>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p><a href="tel:+381691032439">+381 69 1032 439</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <p>11:00 - 19:00, ежедневно</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <p><a href="https://n819790.alteg.io" target="_blank">Online бронирование</a></p>
+                    <div class="reviews-rating">
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-value">4.9 / 5</span>
                     </div>
                 </div>
-
-                <div class="map-container">
-    <!-- Карта с адресом салона с обновленными координатами -->
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.5467163825397!2d20.4723096!3d44.8134397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7aa2eb5c0325%3A0xce3e8097fc54735e!2z0J7RhdGA0LjQtNGB0LrQsCA5LCDQkdC10L7Qs9GA0LDQtCAxMTAwMA!5e0!3m2!1sru!2srs!4v1683456231121!5m2!1sru!2srs"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-</div>
+                <div class="reviews-content">
+                    <p class="review-count">Основано на 124 отзывах</p>
+                    <div class="review-quote">
+                        <p>Все было замечательно. Отличный сервис, услуга выполнена качественно. Я приводила своего шпица Марочку на вычес, и я, и собачка остались очень довольны, однозначно рекомендую</p>
+                    </div>
+                </div>
+                <a href="https://g.page/r/pawsco_rs/review" target="_blank" class="reviews-link">
+                    Оставить отзыв <i class="fas fa-external-link-alt"></i>
+                </a>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
     </main>
 
     <footer>
