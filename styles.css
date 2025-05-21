@@ -392,8 +392,23 @@ section:last-child {
     background-color: var(--accent-pink);
 }
 
+/* Стили для SVG иконки */
+.service-icon .custom-icon {
+    width: 20px;
+    height: 20px;
+    fill: white; /* Цвет иконки */
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s;
+}
+
+/* Стиль при наведении на карточку */
+.service-card:hover .service-icon .custom-icon {
+    transform: scale(1.1);
+}
+
 .service-image {
-    height: 200px;
+    height: 250px;
     background-color: var(--light-gray);
     overflow: hidden;
     position: relative;
@@ -417,12 +432,20 @@ section:last-child {
     margin-bottom: 1rem;
 }
 
-/* Shop section */
+/* Меняем позицию секции магазина */
 #shop {
+  position: relative;
+  z-index: 1;
   background-color: var(--dark-blue);
   color: white;
-  position: relative;
-  padding-top: 3rem;
+  padding-top: 4rem;
+  border-radius: 20px 20px 0 0;
+  margin-top: 0;
+}
+
+/* Удаляем волнистый эффект, который может мешать контенту */
+#shop::before {
+  display: none;
 }
 
 /* Стилизация текста в темном разделе */
@@ -1487,18 +1510,21 @@ footer {
 
 /* Instagram Widget Styles */
 .instagram-widget {
-    border-radius: 15px 15px 0 0;
-    background-color: var(--dark-blue);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  background-color: white; /* Меняем на белый фон */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 4rem; /* Отступ снизу */
 }
 
 .instagram-header {
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #efefef;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+  background-color: var(--dark-blue); /* Сохраняем темно-синий */
 }
 
 .instagram-profile {
@@ -1557,26 +1583,56 @@ footer {
     color: white;
 }
 
+/* Удаляем затемнение изображений в Instagram */
+.instagram-grid::after {
+  display: none; /* Удаляем затемнение, которое блокировало видимость */
+}
+
+/* Обеспечиваем видимость Instagram-сетки */
 .instagram-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background-color: white;
+}
+
+/* Расширяем границы перехода */
+#portfolio .instagram-footer {
+  position: relative;
+  z-index: 5; /* Гарантируем, что кнопка будет над всеми элементами */
+  padding: 16px;
+  background-color: var(--dark-blue); /* Гарантируем цвет фона */
+}
+
+/* Специальный стиль для кнопки Instagram в переходной зоне */
+#portfolio .instagram-footer .btn-accent {
+  background: linear-gradient(to right, var(--accent-orange), var(--accent-pink));
+  box-shadow: 0 5px 20px rgba(255, 56, 100, 0.4);
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              box-shadow 0.4s ease;
+}
+
+#portfolio .instagram-footer .btn-accent:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 56, 100, 0.5);
 }
 
 .instagram-item {
-    position: relative;
-    padding-bottom: 100%; /* Создает квадратные ячейки */
-    overflow: hidden;
+  position: relative;
+  padding-bottom: 100%;
+  overflow: hidden;
+  z-index: 2; /* Поднимаем над градиентом */
 }
 
 .instagram-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
 }
 
 .instagram-item:hover img {
@@ -1584,9 +1640,25 @@ footer {
 }
 
 .instagram-footer {
-    padding: 16px;
-    text-align: center;
-    border-top: 1px solid #efefef;
+  padding: 16px;
+  text-align: center;
+  border-top: 1px solid #efefef;
+  background-color: white; /* Белый фон для футера */
+}
+
+/* Создаем отдельную секцию для перехода */
+.transition-section {
+  height: 250px;
+  background: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0), /* Начинаем с полностью прозрачного */
+    rgba(10, 17, 40, 0.4) 16%, /* Постепенно вводим цвет */
+    rgba(10, 17, 40, 0.8) 42%,
+    var(--dark-blue) 67%); /* Заканчиваем сплошным dark-blue */
+  margin-top: -150px;
+  margin-bottom: -50px;
+  position: relative;
+  z-index: 2; /* Размещаем под контентом, но над фоном */
+  pointer-events: none; /* Позволяет кликать сквозь секцию */
 }
 
 /* Адаптивный дизайн для виджета */
@@ -1621,25 +1693,30 @@ footer {
     }
 }
 
-/* Секция портфолио и переход */
+/* Сброс предыдущих стилей, которые могут мешать */
 #portfolio {
-  background-color: white;
   position: relative;
   z-index: 1;
-  padding-bottom: 6rem; /* Увеличиваем отступ для плавного перехода */
+  padding-bottom: 4rem;
+  background-color: white;
 }
 
-/* Градиентный переход между секциями */
 #portfolio::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 300px; /* Высота зоны перехода */
-  background: linear-gradient(to bottom, white 0%, var(--dark-blue) 100%);
-  z-index: -1;
-  pointer-events: none;
+  display: none; /* Отключаем старый метод перехода */
+}
+
+/* Делаем переход адаптивным */
+@media (max-width: 768px) {
+
+  #shop {
+    margin-top: -4rem;
+    padding-top: 6rem;
+    border-radius: 20px 20px 0 0;
+  }
+
+  #portfolio::after {
+    height: 300px;
+  }
 }
 
 /* Фиксированная кнопка онлайн-записи */
