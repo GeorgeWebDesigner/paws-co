@@ -218,6 +218,7 @@ header {
     /* Улучшаем стили для ссылок на соцсети */
     .social-links {
         margin: 1.5rem 0;
+        color: var(--dark-blue);
     }
 
     .social-links a {
@@ -488,12 +489,16 @@ section:last-child {
 
 .service-content {
     padding: 1.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 37px;
 }
 
 .service-title {
     font-size: 1.3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.05rem;
+}
+
+.service-card:hover .service-title {
+    color: var(--accent-pink);
 }
 
 /* Меняем позицию секции магазина */
@@ -715,6 +720,29 @@ section:last-child {
     background-color: var(--light-gray);
     padding: 1.5rem;
     border-radius: 8px;
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+
+}
+
+.size-info-image {
+    background: var(--medium-gray);
+    border-radius: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.size-info-image img{
+    height: 350px;
+    width: 350px;
+}
+
+@media (max-width: 767px) {
+    .size-info{
+        flex-wrap: wrap;
+    }
 }
 
 /* Size table */
@@ -878,10 +906,10 @@ section:last-child {
 
 /* Стикер с отзывами Google */
 .google-reviews-sticker {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 300px;
+        position: absolute;
+    bottom: -39px;
+    right: -14px;
+    width: 400px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
@@ -968,10 +996,10 @@ section:last-child {
 @media (max-width: 768px) {
     .google-reviews-sticker {
         position: relative;
-        bottom: 0;
+        bottom: 51px;
         right: 0;
-        width: 100%;
-        margin-top: 2rem;
+        width: 83%;
+        height: auto;
     }
 
     .map-container {
@@ -1006,7 +1034,7 @@ footer {
     margin: 1.5rem 0;
 }
 
-.footer-content .social-links a {
+.social-links a {
     color: var(--white)
     font-size: 1.5rem;
     margin: 0 0.5rem;
